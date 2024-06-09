@@ -1,0 +1,64 @@
+.tabs {
+  display: block;
+  margin: 0 auto 20px;
+  position: relative; }
+  .tabs > .nav {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    font-size: 0; }
+    .tabs > .nav > .tab {
+      cursor: pointer;
+      width: 33.33333%;
+      text-align: center;
+      display: inline-block;
+      line-height: 2em;
+      font-size: 16px;
+      font-weight: 400;
+      color: #000;
+      padding: 14px 0px;
+      background: #F2FAF4; }
+      .tabs > .nav > .tab:hover {
+        background-color: #F2FAF4; }
+      .tabs > .nav > .tab.active, .tabs > .nav > .tab[aria-selected='true'] {
+        background-image: url('../images/tab_table_bg_img.webp');
+        background-size: cover;
+        color: #fff; }
+      .tabs > .nav > .tab > span {
+        display: block;
+        pointer-events: none; }
+  .tabs > .tab {
+    display: block;
+    padding: 2px 0px ;
+    background: white; }
+    .tabs > tab:before, .tabs > .tab:after {
+      content: " ";
+      display: table; }
+    .tabs > tab:after {
+      clear: both; }
+  .tabs[alive='true'] > .tab {
+    display: none; }
+    .tabs[alive='true'] > .tab[aria-selected], .tabs[alive='true'] > .tab[aria-selected='true'] {
+      display: block; }
+
+
+
+      @media only screen and (max-width: 425px) {
+        .tabs > .nav > .tab {
+          cursor: pointer;
+          width: 100%;
+          text-align: center;
+          display: block;
+          line-height: 2em;
+          font-size: 16px;
+          font-weight: 400;
+          color: #000;
+          padding: 14px 0px;
+          margin: 8px 0px;
+          background: #F2FAF4;
+        }
+        .tabs > .nav > .tab.aria-selected, .tabs > .nav > .tab[aria-selected='true'] {
+          background-color: #12633D;
+          /* background-size: cover; */
+          color: #fff; }
+      }

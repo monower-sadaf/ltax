@@ -1,0 +1,90 @@
+
+
+/* Question styles */
+.question {
+    border-radius: 6px;
+    background: white;
+    transition: all 0.5s ease;
+    /* margin-bottom: 15px; */
+    font-size: 14px;
+}
+
+.question:hover {
+    background-color: #198754;
+}
+
+.question .active {
+    background-color: #198754;
+    color: #000;
+    width: 100%;
+}
+
+
+
+.question.open {
+    -webkit-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.13);
+    -moz-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.13);
+    box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.13);
+}
+
+.question .faqAnswer { 
+    /* display: none;  */
+    padding: 10px;
+    line-height: 28px;
+    color: #000;
+    font-size: 14px;
+    background-color: #F2FAF4;
+}
+
+.question.open:hover {
+    background: white;
+}
+
+.question h4 {
+    border-radius: 6px;
+    margin: 0px;
+    padding: 10px;
+    /* color: black; */
+    font-weight: 400;
+    font-size: 18px !important;
+    cursor: pointer;
+}
+
+.question div.open {
+    border-radius: 6px;
+    margin: 0px;
+    color: white !important;
+    background-color: #198754;
+    cursor: pointer;
+}
+
+.question:hover h4 {
+    color: white;
+}
+.question div i.open {
+    border-radius: 6px;
+    margin: 0px;
+    color: white;
+    background-color: #198754;
+    cursor: pointer;
+}
+
+.question:hover .faqIcon {
+    color: white;
+}
+
+/* .tttttttttt > .ytp-large-play-button {
+    width: 33px !important;
+    height: 27px !important;
+} */
+
+/* .tttttttttt > {
+    background: red !important;
+} */
+
+
+@media only screen and (max-width: 375px) {
+    .question h4 {
+        font-size: 15px !important;
+    }
+  }

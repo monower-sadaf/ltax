@@ -1,0 +1,48 @@
+import $ from 'jquery';
+/* jquery */
+$(document).ready(function() {
+
+
+      /* mobile menu drop down */
+      const btn = document.querySelector("button.mobile-menu-button");
+      const menu = document.querySelector(".mobile-menu");
+
+      btn.addEventListener("click", () => {
+            menu.classList.toggle("block");
+      });
+          
+    
+      
+  
+      /* for the search bar */
+      $("#hidden_search1").click(function(e){
+          $('#hidden_search2').fadeToggle();
+      })
+  
+  
+  });
+  
+  
+  
+/*   window.addEventListener('scroll', ()=>{
+      let scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      let scrolled = window.scrollY;
+      
+      if(scrolled > (scrollable-600)){
+          $('#support1').addClass('hidden');
+          $('#totop1').removeClass('hidden');
+      }else{
+          $('#totop1').addClass('hidden');
+          $('#support1').removeClass('hidden');
+      }
+  }) */
+  
+  
+  /* for the notice section */
+  $('#notice1').click(function (e) { 
+      e.preventDefault();
+      $('#notice2').fadeToggle(function(){
+          $("#angle1").toggleClass('hidden');
+          $("#angle2").toggleClass('hidden');
+      });
+  });

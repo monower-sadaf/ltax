@@ -1,0 +1,77 @@
+body{
+    font-family: "kalpurush",Arial,sans-serif;
+    font-size: 13px !important;
+    line-height: 1.2;
+    color: #333;
+    background-color: #fff;
+}
+.dotted_botton{
+    border:none;
+    border-bottom:1px dotted #000;
+    background-color:#fff;
+}
+.border_none{
+    border-top: none !important;
+}
+.table-bordered {
+    border: 1px solid #ddd;
+}
+.b1 {
+  border: 1px dotted;
+  padding: 3px;
+  font-size: 12px;
+}
+
+.pdfprint{
+    font-family:'kalpurush',Arial,sans-serif; 
+    font-size:13px !important; 
+    line-height:1.2;
+    color: #333; 
+    background-color: #fff; 
+    width: 7.9in; 
+    border-radius: 10px; 
+    border: dotted 1px; 
+    padding: 10px; 
+    float: left; 
+    margin: 30px auto;
+}
+/* Define your print-specific styles here */
+@media print {
+    /* Hide elements that you don't want to include in the printed PDF */
+    .no-print {
+      display: none !important;
+    }
+
+    @page {
+        size:  a4;   /* auto is the initial value */
+        margin: 0mm; 
+        /* this affects the margin in the printer settings */
+    }
+
+    html{
+        background-color: #FFFFFF; 
+        margin: 0px;  /* this affects the margin on the html before sending to printer */
+    }
+  
+    /* Adjust margins, page breaks, and other print-specific settings */
+    body {
+      margin: 0mm;
+      padding: 0;
+      background-color: #fff; /* Set a white background for the printed page */
+    }
+  
+    /* Customize fonts, font sizes, and other text properties for printing */
+    p, h1, h2, h3, h4, h5, h6 {
+      font-family: "kalpurush",Arial,sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  
+    /* Add page breaks before specific elements */
+    .page-break-before {
+      page-break-before: always;
+    }
+  }
+
+
+  

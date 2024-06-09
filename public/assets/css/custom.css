@@ -1,0 +1,52 @@
+
+/* owl carosol 1 */
+.main-content .owl-theme .custom-nav {
+position: absolute;
+top: 25%;
+left: 0;
+right: 0;
+}
+.main-content .owl-theme .custom-nav .owl-prev, .main-content .owl-theme .custom-nav .owl-next {
+position: absolute;
+height: 100px;
+color: inherit;
+background: none;
+border: none;
+z-index: 10;
+}
+.main-content .owl-theme .custom-nav .owl-prev i, .main-content .owl-theme .custom-nav .owl-next i {
+font-size: 2.5rem;
+color: #6ebb2d;
+}
+.main-content .owl-theme .custom-nav .owl-prev {
+left: 0;
+}
+.main-content .owl-theme .custom-nav .owl-next {
+right: 0;
+}
+
+/* owl carosol 2 */
+.main-content2 .owl-theme2 .custom-nav2 {
+position: absolute;
+top: 8%;
+left: 0;
+right: 0;
+}
+.main-content2 .owl-theme2 .custom-nav2 .owl-prev, .main-content2 .owl-theme2 .custom-nav2 .owl-next {
+position: absolute;
+height: 100px;
+color: inherit;
+background: none;
+border: none;
+z-index: 10;
+}
+.main-content2 .owl-theme2 .custom-nav2 .owl-prev i, .main-content2 .owl-theme2 .custom-nav2 .owl-next i {
+font-size: 1.5rem;
+color: #198754;
+}
+.main-content2 .owl-theme2 .custom-nav2 .owl-prev {
+left: 0;
+}
+.main-content2 .owl-theme2 .custom-nav2 .owl-next {
+right: 0;
+}

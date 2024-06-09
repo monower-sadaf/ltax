@@ -1,0 +1,9 @@
+@tailwind base;
+*::-webkit-scrollbar {
+      display: none;
+    }
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.maateen.me/kalpurush/font.css');
+@import url('http://sonnetdp.github.io/nikosh/css/nikosh.css');
