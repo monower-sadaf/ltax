@@ -1,7 +1,5 @@
 node_modules
 .next
-package-lock.json
-yarn.lock
 app/(citizen)
 app/(citizen_1)
 next.config.prod.js
