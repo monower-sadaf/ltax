@@ -29,7 +29,7 @@ const OwlHeroSlider =  ({sliderlist}) => {
           <div key={index}>
             <Image
               className=" h-[16.25em] lg:h-[27em]"
-              loading="lazy"
+              loading="eager"
               src={
                 image?.image_url
                   ? image?.image_url

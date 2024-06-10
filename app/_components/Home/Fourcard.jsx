@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { relative_image_path } from "@/halpers/helper";
 import Image from "next/image";
-
 const Fourcard = () => {
-
   return (
     <section className="px-5 lg:px-16 pb-[32.76px] lg:pb-[47px]">
       <div className="flex items-center justify-center pb-[16px] lg:pb-[15px]">
@@ -21,8 +19,7 @@ const Fourcard = () => {
           <div className="flex justify-center items-center">
             <Image
               className="w-[7em]"
-              loading="eager"
-              fetchPriority="high"
+              loading="lazy"
               src={relative_image_path("index_card_1.webp")}
               alt="ভূমি উন্নয়ন কর"
               width={145}
@@ -45,7 +42,7 @@ const Fourcard = () => {
           <div className="flex justify-center items-center">
             <Image
               className="w-[7em]"
-              loading="eager"
+              loading="lazy"
               src={relative_image_path("index_card_2.webp")}
               alt="ভূমি উন্নয়ন কর"
               width={145}
@@ -69,7 +66,7 @@ const Fourcard = () => {
             <Image
               className="w-[7em]"
               src={relative_image_path("index_card_3.webp")}
-              loading="eager"
+              loading="lazy"
               alt="ভূমি উন্নয়ন কর"
               width={145}
               height={107}
@@ -90,7 +87,7 @@ const Fourcard = () => {
             <Image
               className="w-[7em]"
               src={relative_image_path("index_card_4.webp")}
-              loading="eager"
+              loading="lazy"
               alt="ভূমি উন্নয়ন কর"
               width={145}
               height={107}

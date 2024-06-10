@@ -58,39 +58,88 @@ export const Notices = cache(
   { maxAge: 1000 * 60 * 60 }
 );
 
-export const HomeStatistics = async () => {
-  const request = [];
-  const data = await fetch(
-    `${process.env.BASE_URL}/portal/statistics`,
-    { request },
-    {
-      headers: headersOption,
+export const HomeStatistics = cache(
+  async () => {
+    const request = [];
+    const data = await fetch(
+      `${process.env.BASE_URL}/portal/statistics`,
+      { request },
+      {
+        headers: headersOption,
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => res.data);
+    return data;
+  },
+  { maxAge: 1000 * 60 * 60 }
+);
+
+export const getTable1Data = cache(
+  async (category, id, title, testqr) => {
+    let response = [];
+    if (category == "divisions") {
+      response = await fetch(`${process.env.BASE_URL}/portal/listData`, {
+        headersOption,
+        method: "POST",
+      })
+        .then((res) => res.json())
+        .catch((error) => console.log(error));
+    } else {
+      const req = {
+        [testqr]: parseInt(id),
+      };
+      response = await fetch(`${process.env.BASE_URL}/portal/listData`, req, {
+        headersOption,
+        method: "POST",
+      })
+        .then((res) => res.json())
+        .catch((error) => console.log(error));
     }
-  )
-    .then((res) => res.json())
-    .then((res) => res.data);
-  return data;
-};
 
-export const getTable1Data = async (category, id, title, testqr) => {
-  let response = [];
-  if (category === "divisions") {
-    response = await fetch(`${process.env.BASE_URL}/portal/listData`, {
-      headersOption,
-      method: "POST",
-    }).then((res) => res.json()).catch((error) => console.log(error));
-  } else {
-    const req = {
-      [testqr]: parseInt(id),
+    return response?.data;
+  },
+  { maxAge: 1000 * 60 * 60 }
+);
+
+export const getTable2Data = cache(
+  async (category, id, title, testqr) => {
+    let response = [];
+    if (category == "divisions") {
+      response = await fetch(process.env.BASE_URL + "/portal/dabiandadayinfo", {
+        headersOption,
+        method: "POST",
+      }).then((res) => res.json());
+    } else {
+      const req = {
+        [testqr]: parseInt(id),
+      };
+      response = await fetch(
+        process.env.BASE_URL + "/portal/dabiandadayinfo",
+        {
+          headersOption,
+          method: "POST",
+        },
+        req
+      ).then((res) => res.json());
+    }
+    /* const req = {
+      id: parseInt(id),
     };
-    response = await fetch(`${process.env.BASE_URL}/portal/listData`, req, {
-      headersOption,
-      method: "POST",
-    }).then((res) => res.json()).catch((error) => console.log(error));
-  }
-
-  return response?.data;
-};
+    const response = await fetch(
+      `${process.env.BASE_URL}/portal/listData`,
+      req,
+      {
+        headersOption,
+        method: "POST",
+      }
+    )
+      .then((res) => res.json())
+      .catch((error) => console.log(error)); */
+    return response?.data;
+  },
+  { maxAge: 1000 * 60 * 60 }
+);
 
 export const Services = async () => {
   const {
@@ -120,12 +169,15 @@ export const recentUpdates = async () => {
   return data;
 };
 
-export const Faqs = async () => {
-  const {
-    data: { data },
-  } = await portalClient.get("/faqs");
-  return data;
-};
+export const Faqs = cache(
+  async () => {
+    const {
+      data: { data },
+    } = await portalClient.get("/faqs");
+    return data;
+  },
+  { maxAge: 1000 * 60 * 60 }
+);
 
 export const vumiShebaForm = cache(
   async () => {
@@ -147,26 +199,35 @@ export const ainObidhi = cache(
   { maxAge: 1000 * 60 * 60 }
 );
 
-export const poriPotro = async () => {
-  const {
-    data: { data },
-  } = await portalClient.get("/poripotro_proggapons");
-  return data;
-};
+export const poriPotro = cache(
+  async () => {
+    const {
+      data: { data },
+    } = await portalClient.get("/poripotro_proggapons");
+    return data;
+  },
+  { maxAge: 1000 * 60 * 60 }
+);
 
-export const manuals = async () => {
-  const {
-    data: { data },
-  } = await portalClient.get("/manuals");
-  return data;
-};
+export const manuals = cache(
+  async () => {
+    const {
+      data: { data },
+    } = await portalClient.get("/manuals");
+    return data;
+  },
+  { maxAge: 1000 * 60 * 60 }
+);
 
-export const nitimala = async () => {
-  const {
-    data: { data },
-  } = await portalClient.get("/nitimalas");
-  return data;
-};
+export const nitimala = cache(
+  async () => {
+    const {
+      data: { data },
+    } = await portalClient.get("/nitimalas");
+    return data;
+  },
+  { maxAge: 1000 * 60 * 60 }
+);
 
 // const logoutHeadersOption = {
 //   'Authorization': token,

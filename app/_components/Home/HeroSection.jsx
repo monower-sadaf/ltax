@@ -1,9 +1,6 @@
 export const revalidate = 3600;
-
-
 import { Sliders } from "@/app/_api/api";
 import HeroSlider from "@/app/_components/_slider/HeroSlider";
-
 const HeroSection = async () => {
   const sliders = await Sliders().catch((err) => console.log(err));
   return (
